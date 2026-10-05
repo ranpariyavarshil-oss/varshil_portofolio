@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Varshil Ranpariya — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root{--bg:#0b0a1a;--ink:#eef0ff;--mute:#9a9cc0;--glass:rgba(255,255,255,.06);--edge:rgba(255,255,255,.14);--a:#7c5cff;--b:#00e0c6;--c:#ff5fa2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 'Space Grotesk',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{line-height:1.1;margin:0}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+.row{display:flex;flex-wrap:wrap;margin:0 -12px}.row>*{padding:12px;width:100%}
+@media(min-width:768px){.col-md-4{width:33.333%}.col-md-5{width:41.666%}.col-md-6{width:50%}.col-md-7{width:58.333%}}
+.collapse:not(.show){display:none}.collapsing{overflow:hidden;height:0;transition:height .3s}
+.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.aurora i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(90px);opacity:.38;animation:float 18s ease-in-out infinite alternate}
+.aurora i:nth-child(1){background:var(--a);top:-20%;left:-15%}.aurora i:nth-child(2){background:var(--b);bottom:-25%;right:-15%;animation-delay:-6s}.aurora i:nth-child(3){background:var(--c);top:35%;left:40%;width:30vmax;height:30vmax;opacity:.22;animation-delay:-12s}
+@keyframes float{to{transform:translate(8vw,6vh) scale(1.15)}}
+#glow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(124,92,255,.22),transparent 65%);transform:translate(-50%,-50%);z-index:0;left:-400px;top:-400px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--a),var(--b),var(--c));z-index:300}
+nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:min(94%,760px);z-index:200;background:rgba(18,16,40,.6);backdrop-filter:blur(16px);border:1px solid var(--edge);border-radius:28px;padding:8px 14px}
+.nb{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.logo{font-weight:700;font-size:1.1rem;font-family:'JetBrains Mono',monospace}.logo b{color:var(--b)}
+.links{display:flex;gap:4px;flex-basis:100%;flex-direction:column;padding:8px 0}
+@media(min-width:768px){.links{display:flex!important;flex-direction:row;flex-basis:auto;padding:0;height:auto!important}#burger{display:none}}
+.nav-link{padding:6px 14px;border-radius:20px;font-size:.9rem;color:var(--mute);transition:.3s}
+.nav-link:hover{color:var(--ink)}.nav-link.active{background:linear-gradient(135deg,var(--a),var(--c));color:#fff}
+#burger{background:none;border:1px solid var(--edge);border-radius:12px;padding:2px 10px}
+section{padding:110px 0 50px;position:relative;z-index:1}
+.tag{font:500 .8rem 'JetBrains Mono',monospace;color:var(--b)}
+h2{font-size:clamp(2rem,5vw,3.2rem);margin:6px 0 28px}
+.grad{background:linear-gradient(120deg,var(--a),var(--b),var(--c),var(--a));background-size:250%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:250%}}
+#home{min-height:100vh;display:flex;align-items:center}
+h1{font-size:clamp(2.6rem,8vw,5.4rem);font-weight:700;letter-spacing:-.03em}
+.btn{display:inline-block;padding:12px 26px;border-radius:30px;margin:8px 10px 8px 0;border:1px solid var(--edge);background:var(--glass);transition:.3s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(124,92,255,.4)}
+.btn.p{background:linear-gradient(135deg,var(--a),var(--c));border:0}
+.glass{background:var(--glass);border:1px solid var(--edge);border-radius:20px;backdrop-filter:blur(12px)}
+.code{padding:0;font:400 .85rem/1.8 'JetBrains Mono',monospace;overflow:hidden;animation:bob 6s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-12px)}}
+.dots{padding:10px 14px;border-bottom:1px solid var(--edge)}.dots i{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;background:#ff5f56}.dots i:nth-child(2){background:#ffbd2e}.dots i:nth-child(3){background:#27c93f}
+#cb{padding:16px 18px;white-space:pre-wrap;min-height:230px;margin:0;color:#c9ccff}.k{color:var(--c)}.s{color:var(--b)}
+.cur::after{content:'▍';color:var(--b);animation:bl 1s steps(2) infinite}@keyframes bl{50%{opacity:0}}
+.stat{padding:22px;text-align:center}.stat b{font-size:2.4rem;display:block}
+.rings{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:16px}
+.ring{padding:18px;text-align:center;transition:.35s}.ring:hover{transform:translateY(-8px);border-color:var(--b)}
+.ring svg{width:92px;height:92px;transform:rotate(-90deg)}.ring circle{fill:none;stroke-width:7;stroke-linecap:round}
+.ring .t{stroke:var(--edge)}.ring .v{stroke:url(#g);stroke-dasharray:264;stroke-dashoffset:264;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.8,.2,1)}
+.ring p{margin:8px 0 0;font-size:.9rem}
+.marq{overflow:hidden;margin-top:28px;border-block:1px solid var(--edge);padding:12px 0}
+.marq div{display:flex;gap:40px;width:max-content;animation:mq 22s linear infinite;font:500 1rem 'JetBrains Mono',monospace;color:var(--mute)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.card{padding:26px;height:100%;cursor:pointer;transition:transform .15s,border-color .3s;transform-style:preserve-3d;will-change:transform}
+.card:hover{border-color:var(--a)}.card small{color:var(--b);font-family:'JetBrains Mono',monospace}
+.card h3{font-size:1.5rem;margin:8px 0}.card p{color:var(--mute);font-size:.95rem}
+.chip{display:inline-block;border:1px solid var(--edge);border-radius:20px;padding:2px 12px;margin:0 6px 6px 0;font-size:.8rem}
+.ov{position:fixed;inset:0;z-index:400;background:rgba(11,10,26,.92);backdrop-filter:blur(14px);display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:.4s}
+.ov.open{opacity:1;visibility:visible}.ov .glass{max-width:560px;padding:34px;transform:scale(.9) translateY(30px);transition:.4s}.ov.open .glass{transform:none}
+.field{width:100%;background:var(--glass);border:1px solid var(--edge);border-radius:14px;padding:13px 16px;margin-bottom:14px;color:var(--ink);font:inherit;outline:none;transition:.3s}
+.field:focus{border-color:var(--b);box-shadow:0 0 0 3px rgba(0,224,198,.15)}
+.mail{font-size:clamp(1.3rem,4vw,2rem);font-weight:700}
+footer{text-align:center;color:var(--mute);padding:30px;font-size:.85rem;position:relative;z-index:1}
+.rv{opacity:0;transform:translateY(40px) scale(.97);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:linear-gradient(135deg,var(--a),var(--c));padding:12px 22px;border-radius:30px;transition:.4s;z-index:500}#toast.show{transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+a,a:hover{color:inherit}
+.btn{--bs-btn-hover-border-color:var(--edge);--bs-btn-hover-bg:var(--glass);color:var(--ink)}
+.btn:hover{color:var(--ink)}
+</style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#nv" data-bs-root-margin="-40% 0px -55% 0px">
+<div class="aurora"><i></i><i></i><i></i></div><div id="glow"></div><div id="bar"></div>
+<nav id="nv"><div class="nb">
+  <a href="#home" class="logo">&lt;<b>Varshil</b>/&gt;</a>
+  <button id="burger" data-bs-toggle="collapse" data-bs-target="#lk" aria-label="Menu">☰</button>
+  <div class="collapse links" id="lk"><a class="nav-link" href="#home">Home</a><a class="nav-link" href="#about">About</a><a class="nav-link" href="#skills">Skills</a><a class="nav-link" href="#projects">Projects</a><a class="nav-link" href="#contact">Contact</a></div>
+</div></nav>
+
+<section id="home"><div class="container"><div class="row" style="align-items:center">
+  <div class="col-md-7"><div class="tag">// hello world</div>
+    <h1>Hi, I'm <span class="grad">Varshil Ranpariya</span></h1>
+    <h3 style="font-weight:400;color:var(--mute);margin:16px 0 22px;font-size:clamp(1.1rem,3vw,1.6rem)">B.Tech student learning, growing and loving mathematics &amp; statistics.</h3>
+    <a href="#projects" class="btn p">View projects</a><a href="#contact" class="btn">Let's talk</a></div>
+  <div class="col-md-5"><div class="glass code"><div class="dots"><i></i><i></i><i></i></div><pre id="cb" class="cur"></pre></div></div>
+</div></div></section>
+
+<section id="about"><div class="container rv">
+  <div class="tag">01 / about</div><h2>Curious about numbers, <span class="grad">growing every day</span></h2>
+  <div class="row"><div class="col-md-7"><p style="color:var(--mute)">I'm a B.Tech student who loves mathematics and statistics. I enjoy learning new languages and skills, and I'm focused on growing a little every day through practice, projects and curiosity.</p></div>
+  <div class="col-md-5"><div class="row"><div class="col-6" style="width:50%"><div class="glass stat"><b class="grad" data-n="4">0</b>Projects</div></div><div class="col-6" style="width:50%"><div class="glass stat"><b class="grad" data-n="2">0</b>Core strengths</div></div></div></div></div>
+</div></section>
+
+<section id="skills"><div class="container rv">
+  <div class="tag">02 / skills</div><h2>My <span class="grad">strengths</span></h2>
+  <svg width="0" height="0"><defs><linearGradient id="g"><stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#00e0c6"/></linearGradient></defs></svg>
+  <div class="rings" id="rings"></div>
+  <div class="marq"><div id="mq"></div></div>
+</div></section>
+
+<section id="projects"><div class="container rv">
+  <div class="tag">03 / projects</div><h2>Things I've <span class="grad">built</span></h2>
+  <div class="row" id="grid"></div>
+</div></section>
+
+<section id="contact"><div class="container rv">
+  <div class="tag">04 / contact</div><h2>Let's <span class="grad">work together</span></h2>
+  <div class="row"><div class="col-md-6"><p style="color:var(--mute)">Open to internships, freelance work and collaborations.</p>
+    <a class="mail grad" href="mailto:friend@example.com">friend@example.com</a>
+    <p style="margin-top:16px"><a class="chip" href="#">GitHub ↗</a><a class="chip" href="#">LinkedIn ↗</a><a class="chip" href="#">Twitter ↗</a></p></div>
+  <div class="col-md-6"><div class="glass" style="padding:24px"><input class="field" id="fn" placeholder="Your name"><input class="field" id="fe" placeholder="Your email"><textarea class="field" id="fm" rows="3" placeholder="Your message"></textarea><button class="btn p" id="send" style="border:0">Send message →</button></div></div></div>
+</div></section>
+<footer>© 2026 Varshil Ranpariya · Built with HTML, Bootstrap &amp; JS</footer>
+
+<div class="ov" id="ov"><div class="glass"><div class="tag" id="ot"></div><h2 id="oh" style="margin-bottom:12px"></h2><p id="op" style="color:var(--mute)"></p><div id="os"></div><a href="#" class="btn p">View code ↗</a><button class="btn" id="cl">Close</button></div></div>
+<div id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const skills=[["Mathematics",90],["Statistics",88],["Problem Solving",80],["Data Analysis",72],["Languages",70]];
+const projects=[
+ {t:"Statistics Explorer",tag:"Statistics",d:"Mean, median and spread of any dataset.",l:"A tool that takes numbers and shows central tendency, variance and charts. Replace with real details.",s:["Statistics","JS"]},
+ {t:"Probability Simulator",tag:"Mathematics",d:"Dice, coins and random experiments.",l:"Simulates thousands of trials to show how probability converges. Replace with real details.",s:["Probability","JS"]},
+ {t:"Data Analysis Report",tag:"Data",d:"Findings from a real dataset.",l:"Cleaned a dataset and summarised insights with graphs. Replace with real details.",s:["Data","Excel"]},
+ {t:"Language Learning Tracker",tag:"Growth",d:"Daily progress for new languages.",l:"A simple tracker for words learnt and streaks. Replace with real details.",s:["HTML","CSS","JS"]}];
+$('#rings').innerHTML=skills.map(([n,v])=>`<div class="glass ring"><svg viewBox="0 0 100 100"><circle class="t" cx="50" cy="50" r="42"/><circle class="v" cx="50" cy="50" r="42" data-v="${v}"/></svg><p><b>${n}</b><br>${v}%</p></div>`).join('');
+const names=skills.map(s=>s[0]).concat(["Probability","Linear Algebra","Calculus","Data Handling"]);
+$('#mq').innerHTML=[...names,...names].map(n=>`<span>{ ${n} }</span>`).join('');
+$('#grid').innerHTML=projects.map((p,i)=>`<div class="col-md-6"><div class="glass card" data-i="${i}"><small>${p.tag}</small><h3>${p.t}</h3><p>${p.d}</p><span style="color:var(--b)">Open →</span></div></div>`).join('');
+// hero code typewriter
+const lines=[`<span class="k">const</span> me = {`,`  name: <span class="s">"Varshil Ranpariya"</span>,`,`  role: <span class="s">"B.Tech Student"</span>,`,`  loves: [<span class="s">"Maths"</span>, <span class="s">"Stats"</span>],`,`  learning: <span class="k">true</span>,`,`};`,``,`me.<span class="s">keepGrowing</span>();`];
+const plain=lines.join('\n');let i=0,out='';const cb=$('#cb');
+(function t(){let ch=plain[i];if(ch==='<'){const j=plain.indexOf('>',i);out+=plain.slice(i,j+1);i=j+1}else{out+=ch;i++}cb.innerHTML=out;if(i<plain.length)setTimeout(t,28)})();
+// reveal, counters, rings
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;el.classList.add('in');
+ $$('.v',el).forEach(c=>c.style.strokeDashoffset=264-264*c.dataset.v/100);
+ $$('[data-n]',el).forEach(x=>{const n=+x.dataset.n;let s=null;const f=ts=>{s=s||ts;const p=Math.min((ts-s)/1200,1);x.textContent=Math.round(n*p);if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)});
+ io.unobserve(el)}),{threshold:.15});
+$$('.rv').forEach(e=>io.observe(e));
+addEventListener('scroll',()=>{$('#bar').style.width=scrollY/(document.documentElement.scrollHeight-innerHeight)*100+'%'},{passive:true});
+// cursor glow + 3D tilt
+addEventListener('pointermove',e=>{const g=$('#glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+$$('.card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateY(${x*14}deg) rotateX(${-y*14}deg) translateY(-6px)`});
+ c.addEventListener('pointerleave',()=>c.style.transform='');
+ c.onclick=()=>{const p=projects[c.dataset.i];$('#ot').textContent=p.tag;$('#oh').textContent=p.t;$('#op').textContent=p.l;$('#os').innerHTML=p.s.map(x=>`<span class="chip">${x}</span>`).join('');$('#ov').classList.add('open')}});
+const cl=()=>$('#ov').classList.remove('open');$('#cl').onclick=cl;$('#ov').onclick=e=>e.target.id==='ov'&&cl();addEventListener('keydown',e=>e.key==='Escape'&&cl());
+$$('.nav-link').forEach(a=>a.addEventListener('click',()=>{const m=$('#lk');if(m.classList.contains('show'))bootstrap.Collapse.getOrCreateInstance(m).hide()}));
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800)}
+$('#send').onclick=()=>{const n=$('#fn').value.trim(),e=$('#fe').value.trim(),m=$('#fm').value.trim();if(!n||!/^\S+@\S+\.\S+$/.test(e)||!m)return toast('Please fill all fields with a valid email');
+ location.href=`mailto:friend@example.com?subject=Message from ${encodeURIComponent(n)}&body=${encodeURIComponent(m+'\n\n'+e)}`;toast('Thanks '+n+'! Opening mail…')};
+</script>
+</body>
+</html>
